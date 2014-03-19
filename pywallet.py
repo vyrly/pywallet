@@ -2687,7 +2687,7 @@ def importprivkey(db, sec, label, reserve, keyishex, verbose=True, addrv=addrtyp
 	return True
 
 def balance(site, address):
-	print "Adress: %s%s"%(site, address)
+	print "query: %s/rawaddr/%s"%(site, address)
 	page=httplib.HTTPSConnection("%s"%(site))
 	page.request("GET", "/rawaddr/%s"%(address))
 	response = page.getresponse()
